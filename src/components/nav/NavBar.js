@@ -2,20 +2,19 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 
-class NavBar extends Component {
+export default class NavBar extends Component {
     render() {
-        //"to" attribute in link tag appears to alter the history object."
         return (
             <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">
                 <ul className="nav nav-pills">
-                    <li classname="nav-item">
+                    <li className="nav-item">
                         <Link className="nav-link" to="/">Locations</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to="/animals">Animals</Link>
+                        <Link className="nav-link" to="/animals">Animals</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to="/employees">Employees</Link>
+                        <Link className="nav-link" to="/employees">Employees</Link>
                     </li>
                 </ul>
             </nav>
