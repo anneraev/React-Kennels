@@ -5,12 +5,14 @@ export default class Location extends Component {
     render() {
         console.log("locations props", this.props.locations);
         return (
-            this.props.locations.map(location =>
+            <section className = "location">
+            {this.props.locations.map(location =>
                 <div key ={location.id}>
                 <span>{location.name}</span>
                 <span>{location.address}</span>
                 </div>
-                )
+                )}
+                </section>
         )
     }
 }
