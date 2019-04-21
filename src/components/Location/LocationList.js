@@ -7,8 +7,8 @@ export default class Location extends Component {
         return (
             this.props.locations.map(location =>
                 <div key ={location.id}>
-                {location.name}
-                {location.address}
+                <span>{location.name}</span>
+                <span>{location.address}</span>
                 </div>
                 )
         )

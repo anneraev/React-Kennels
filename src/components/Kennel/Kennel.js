@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import EmployeeList from "../Employee/EmployeeList"; //import EmployeeList
 import LocationList from "../Location/LocationList"; //import LocationList.
 import "./Kennel.css";
+import AnimalList from "../animal/animalList";
 
 //export kennel element with EmployeeList and LocationList as children. Kennel extends Component class.
 export default class Kennel extends Component {
@@ -33,7 +34,8 @@ export default class Kennel extends Component {
     //state is an object containing objects from database.
     state = {
         employees: this.employeesFromAPI,
-        locations: this.locationsFromAPI
+        locations: this.locationsFromAPI,
+        animals: this.animalsFromAPI
     }
 
     //calls render from Component, which is now part of the new Kennel class since Kennel aliases Component.
@@ -48,6 +50,7 @@ export default class Kennel extends Component {
                 <h1>Student Kennels</h1>
                 <LocationList locations={this.state.locations} />
                 <EmployeeList employees={this.state.employees} />
+                <AnimalList animals={this.state.animals} />
             </article>
         );
     }
