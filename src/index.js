@@ -1,12 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactDom from "react-dom";
+import React from "react"; //React must be in scope when using JSX.
+import Kennel from "./components/Kennel/Kennel"//import Kennel to render it.
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//First argument: Kennel class JSX object. Second argument: Callback function as a reference to the DOM element beint written to.
+ReactDom.render(<Kennel />, document.querySelector("#root"));
