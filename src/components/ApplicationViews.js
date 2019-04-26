@@ -8,10 +8,30 @@ import OwnersList from "./owner/OwnersList";
 export default class ApplicationViews extends Component {
 
     state = {
-        employees: this.employeesFromAPI,
-        locations: this.locationsFromAPI,
-        animals: this.animalsFromAPI,
-        owners: this.ownersFromAPI,
+        employees: [],
+        locations: [],
+        animals: [],
+        owners: [],
+    }
+
+    componentDidMount() {
+        const newState = {}
+        fetch("http://localhost:5002/animals")
+            .then(r => r.json())
+            .then(animals => newState.animals = animals)
+            //employees
+            .then(() => fetch("http://localhost:5002/employees")
+            .then(r => r.json()))
+            .then(employees => newState.employees = employees)
+            //owners
+            .then(() => fetch("http://localhost:5002/owners")
+            .then(r => r.json()))
+            .then(owners => newState.owners = owners)
+            //locations
+            .then(() => fetch("http://localhost:5002/locations")
+            .then(r => r.json()))
+            .then(locations => newState.locations = locations)
+            .then(() => this.setState(newState))
     }
 
     render() {
