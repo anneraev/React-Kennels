@@ -9,7 +9,7 @@ export default class Kennel extends Component {
     render(){
         return (
             <React.Fragment>
-                <div class="kennel">
+                <div className="kennel">
                 <NavBar />
                 <ApplicationViews />
                 </div>
