@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 export default class Location extends Component {
     render() {
-        console.log("locations props", this.props);
+        console.log("locations props", this.props.locations);
         return (
             <section className = "location">
             {this.props.locations.map(location =>
